@@ -9,26 +9,14 @@ namespace InterfaceExample
     {
         static void Main(string[] args)
         {
-            ConsoleKeyInfo cki;
+            //Fields
             Hero hero = new Hero();
 
             hero.IAm();
             do
             {
-                cki = Console.ReadKey(true);
-                
-                if (cki.Key == ConsoleKey.LeftArrow)
-                {
-                    hero.HeroWalkLeft();
-                }
-
-                if (cki.Key == ConsoleKey.RightArrow)
-                {
-                    hero.HeroWalkRight();
-                }
-
-            } while (cki.Key != ConsoleKey.Escape);
-            Console.ReadLine();
+                hero.Update();
+            } while (hero.Cki.Key != ConsoleKey.Escape);
         }
     }
 }

@@ -8,16 +8,25 @@ namespace InterfaceExample
     public class Hero
     {
         //Fields
+        ConsoleKeyInfo cki;
 
         //Properties
+        public ConsoleKeyInfo Cki
+        {
+            get { return this.cki; }
+        }
         
         // Constructor
         public Hero()
         {
-
         }
 
         //Methods
+        public void Update()
+        {
+            cki = Console.ReadKey(true);
+        }
+
         public void IAm()
         {
             Console.WriteLine("Ik ben een Hero");
