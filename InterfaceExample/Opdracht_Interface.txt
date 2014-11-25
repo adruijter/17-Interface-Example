@@ -1,4 +1,7 @@
-﻿Maak een Hero class
+﻿Opdracht 1
+++++++++++
+
+Maak een Hero class
 
 Als het je programma wordt opgestart is er in de console te lezen: "Ik ben een Hero".
 
