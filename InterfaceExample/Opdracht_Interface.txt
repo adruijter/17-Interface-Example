@@ -1,1 +1,13 @@
-﻿
+﻿Maak een Hero class
+
+Als het je programma wordt opgestart is er in de console te lezen: "Ik ben een Hero".
+
+Maak binnen de Hero class een method WalkLeft(). Deze method geeft de melding "Ik ben een Hero en ik loop naar Links"
+Deze method wordt aangeroepen wanneer de pijltjestoets Links wordt ingedrukt
+
+Maak binnen de Hero class een method WalkRight(). Deze method geeft de melding "Ik ben een Hero en ik loop naar rechts"
+Deze method wordt aangeroepen wanneer de pijltjestoets Rechts wordt ingedrukt.
+
+Kijk op de volgende webpagina om een nog een keer een voorbeeld van een Do While loop te zien
+http://msdn.microsoft.com/en-us/library/471w8d85(v=vs.110).aspx
+
