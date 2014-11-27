@@ -9,8 +9,10 @@ namespace InterfaceExample
     public class Hero
     {
         //Fields
-        ConsoleKeyInfo cki, old_cki;
-        bool leftPressed = false, rightPressed = false;
+        private ConsoleKeyInfo cki;
+        private WalkRight walkRight;
+        private WalkLeft walkLeft;
+        private Idle idle;
 
         //Properties
         public ConsoleKeyInfo Cki
@@ -22,6 +24,9 @@ namespace InterfaceExample
         public Hero() 
         {
             this.IAm();
+            this.walkRight = new WalkRight(this);
+            this.walkLeft = new WalkLeft(this);
+            this.idle = new Idle(this);
         }
 
         //Methods
@@ -31,18 +36,23 @@ namespace InterfaceExample
 
             if (cki.Key == ConsoleKey.LeftArrow)
             {
-                this.HeroWalkLeft();
+                this.walkLeft.Info();
             }
 
             if (cki.Key == ConsoleKey.RightArrow)
             {
-                this.HeroWalkRight();
+                this.walkRight.Info();
             }
 
             if (cki.Key == ConsoleKey.S)
             {
-                this.HeroStandStill();
+                this.idle.Info();
             }
+        }
+
+        public void Info()
+        {
+
         }
 
         public void IAm()
@@ -50,21 +60,6 @@ namespace InterfaceExample
             Console.WriteLine("Ik ben een Hero");
         }
 
-        private void HeroStandStill()
-        {
-            Console.WriteLine("Ik ben een Hero en ik sta stil");
-        }
-
-        private void HeroWalkLeft()
-        {
-            Console.WriteLine("Ik ben een Hero en loop naar links");
-        }
-
-        private void HeroWalkRight()
-        {
-            Console.WriteLine("Ik ben een Hero en loop naar rechts");
-        }
-
-
+       
     }
 }

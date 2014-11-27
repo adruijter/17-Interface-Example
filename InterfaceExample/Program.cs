@@ -15,8 +15,8 @@ namespace InterfaceExample
             do
             {
                 hero.Update();
-                
-            } while (true);
-        } //&& hero.Cki.Key != ConsoleKey.Escape
+                hero.Info();
+            } while (hero.Cki.Key != ConsoleKey.Escape);
+        } 
     }
 }
