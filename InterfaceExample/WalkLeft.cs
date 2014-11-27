@@ -5,7 +5,7 @@ using System.Text;
 
 namespace InterfaceExample
 {
-    public class WalkLeft
+    public class WalkLeft : State
     {
         //Fields
         private Hero hero;

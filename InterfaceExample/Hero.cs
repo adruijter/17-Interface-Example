@@ -13,6 +13,7 @@ namespace InterfaceExample
         private WalkRight walkRight;
         private WalkLeft walkLeft;
         private Idle idle;
+        private State state;
 
         //Properties
         public ConsoleKeyInfo Cki
@@ -23,7 +24,7 @@ namespace InterfaceExample
         // Constructor
         public Hero() 
         {
-            this.IAm();
+            Console.WriteLine("Ik ben een Hero");
             this.walkRight = new WalkRight(this);
             this.walkLeft = new WalkLeft(this);
             this.idle = new Idle(this);
@@ -36,30 +37,23 @@ namespace InterfaceExample
 
             if (cki.Key == ConsoleKey.LeftArrow)
             {
-                this.walkLeft.Info();
+                this.state = this.walkLeft;
             }
 
             if (cki.Key == ConsoleKey.RightArrow)
             {
-                this.walkRight.Info();
+                this.state = this.walkRight;
             }
 
             if (cki.Key == ConsoleKey.S)
             {
-                this.idle.Info();
+                this.state = this.idle;
             }
         }
 
         public void Info()
         {
-
-        }
-
-        public void IAm()
-        {
-            Console.WriteLine("Ik ben een Hero");
-        }
-
-       
+            this.state.Info();
+        }      
     }
 }
