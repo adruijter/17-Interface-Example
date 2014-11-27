@@ -11,12 +11,12 @@ namespace InterfaceExample
         {
             //Fields
             Hero hero = new Hero();
-
-            hero.IAm();
+            
             do
             {
                 hero.Update();
-            } while (hero.Cki.Key != ConsoleKey.Escape);
-        }
+                
+            } while (true);
+        } //&& hero.Cki.Key != ConsoleKey.Escape
     }
 }

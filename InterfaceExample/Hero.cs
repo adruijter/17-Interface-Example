@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace InterfaceExample
 {
     public class Hero
     {
         //Fields
-        ConsoleKeyInfo cki;
+        ConsoleKeyInfo cki, old_cki;
+        bool leftPressed = false, rightPressed = false;
 
         //Properties
         public ConsoleKeyInfo Cki
@@ -17,7 +19,10 @@ namespace InterfaceExample
         }
         
         // Constructor
-        public Hero() { }
+        public Hero() 
+        {
+            this.IAm();
+        }
 
         //Methods
         public void Update()
@@ -28,15 +33,26 @@ namespace InterfaceExample
             {
                 this.HeroWalkLeft();
             }
+
             if (cki.Key == ConsoleKey.RightArrow)
             {
                 this.HeroWalkRight();
+            }
+
+            if (cki.Key == ConsoleKey.S)
+            {
+                this.HeroStandStill();
             }
         }
 
         public void IAm()
         {
             Console.WriteLine("Ik ben een Hero");
+        }
+
+        private void HeroStandStill()
+        {
+            Console.WriteLine("Ik ben een Hero en ik sta stil");
         }
 
         private void HeroWalkLeft()
