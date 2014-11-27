@@ -17,14 +17,21 @@ namespace InterfaceExample
         }
         
         // Constructor
-        public Hero()
-        {
-        }
+        public Hero() { }
 
         //Methods
         public void Update()
         {
             cki = Console.ReadKey(true);
+
+            if (cki.Key == ConsoleKey.LeftArrow)
+            {
+                this.HeroWalkLeft();
+            }
+            if (cki.Key == ConsoleKey.RightArrow)
+            {
+                this.HeroWalkRight();
+            }
         }
 
         public void IAm()
@@ -32,14 +39,16 @@ namespace InterfaceExample
             Console.WriteLine("Ik ben een Hero");
         }
 
-        public void HeroWalkLeft()
+        private void HeroWalkLeft()
         {
             Console.WriteLine("Ik ben een Hero en loop naar links");
         }
 
-        public void HeroWalkRight()
+        private void HeroWalkRight()
         {
             Console.WriteLine("Ik ben een Hero en loop naar rechts");
         }
+
+
     }
 }
